@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="مدبروكيور — منصة عربية موحّدة لمشتريات المنشآت الطبية.">
+  <title>مدبروكيور | المشتريات الطبية</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;600;700&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400,0,0&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#mainContent">انتقل إلى المحتوى</a>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="التنقل الرئيسي">
+      <a class="brand" href="#dashboard" data-route="dashboard" aria-label="مدبروكيور - الرئيسية">
+        <span class="brand-mark"><span class="material-symbols-rounded" aria-hidden="true">medical_services</span></span>
+        <span><strong>مدبروكيور</strong><small>البنية التحتية للمشتريات الطبية</small></span>
+      </a>
+      <nav class="side-nav">
+        <button class="nav-item active" data-route="dashboard"><span class="material-symbols-rounded" aria-hidden="true">space_dashboard</span><span>لوحة المشتريات</span></button>
+        <button class="nav-item" data-route="catalog"><span class="material-symbols-rounded" aria-hidden="true">inventory_2</span><span>كتالوج المنتجات</span></button>
+        <button class="nav-item" data-route="orders"><span class="material-symbols-rounded" aria-hidden="true">local_shipping</span><span>الطلبات والشحنات</span><span class="nav-count">3</span></button>
+        <button class="nav-item" data-route="suppliers"><span class="material-symbols-rounded" aria-hidden="true">warehouse</span><span>الموردون المعتمدون</span></button>
+        <button class="nav-item" data-route="rfq"><span class="material-symbols-rounded" aria-hidden="true">request_quote</span><span>طلبات التسعير</span></button>
+      </nav>
+      <div class="sidebar-spacer"></div>
+      <div class="compliance-card">
+        <span class="material-symbols-rounded" aria-hidden="true">verified_user</span>
+        <div><strong>مشتريات موثّقة</strong><p>موردون وتراخيص وفواتير متوافقة مع المتطلبات التنظيمية.</p></div>
+      </div>
+      <button class="account-card" type="button">
+        <span class="avatar">ر</span>
+        <span><strong>د. رامي الأحمد</strong><small>مجمع الشفاء الطبي</small></span>
+        <span class="material-symbols-rounded" aria-hidden="true">more_horiz</span>
+      </button>
+    </aside>
+
+    <div class="workspace">
+      <header class="topbar">
+        <button class="icon-btn mobile-menu" id="menuBtn" type="button" aria-label="فتح القائمة" aria-expanded="false"><span class="material-symbols-rounded">menu</span></button>
+        <div class="page-heading"><p>مجمع الشفاء الطبي <span class="verified-label"><span class="material-symbols-rounded">verified</span> حساب معتمد</span></p><h1 id="pageTitle">لوحة المشتريات</h1></div>
+        <div class="top-actions">
+          <label class="global-search"><span class="material-symbols-rounded" aria-hidden="true">search</span><span class="sr-only">بحث سريع</span><input id="globalSearch" type="search" placeholder="ابحث باسم المنتج أو الكود..."></label>
+          <button class="icon-btn" type="button" aria-label="التنبيهات"><span class="material-symbols-rounded">notifications</span><i class="notification-dot">3</i></button>
+          <button class="cart-trigger" id="cartBtn" type="button"><span class="material-symbols-rounded" aria-hidden="true">shopping_cart</span><span>السلة</span><b id="cartCount">0</b></button>
+        </div>
+      </header>
+
+      <main id="mainContent" tabindex="-1">
+        <section class="view active" id="dashboardView" data-view="dashboard">
+          <div class="intro-row">
+            <div><p class="eyebrow">الاثنين، 5 أكتوبر 2026</p><h2>صباح الخير، د. رامي</h2><p>إليك ملخص عمليات التوريد التي تحتاج إلى انتباهك اليوم.</p></div>
+            <button class="primary-btn" data-route="catalog"><span class="material-symbols-rounded" aria-hidden="true">add_shopping_cart</span> طلب مشتريات جديد</button>
+          </div>
+
+          <div class="metrics-grid">
+            <article class="metric-card"><div class="metric-icon primary-soft"><span class="material-symbols-rounded">receipt_long</span></div><div><p>قيمة مشتريات الشهر</p><strong>1,284,500 <small>ر.س</small></strong><span class="trend positive">+12.4% عن سبتمبر</span></div></article>
+            <article class="metric-card"><div class="metric-icon secondary-soft"><span class="material-symbols-rounded">pending_actions</span></div><div><p>طلبات قيد التنفيذ</p><strong>8</strong><span class="trend neutral">3 تحتاج متابعة</span></div></article>
+            <article class="metric-card"><div class="metric-icon info-soft"><span class="material-symbols-rounded">local_shipping</span></div><div><p>شحنات في الطريق</p><strong>4</strong><span class="trend neutral">أقرب وصول غداً</span></div></article>
+            <article class="metric-card"><div class="metric-icon warning-soft"><span class="material-symbols-rounded">inventory</span></div><div><p>أصناف منخفضة المخزون</p><strong>6</strong><span class="trend warning-text">تتطلب إعادة طلب</span></div></article>
+          </div>
+
+          <div class="dashboard-grid">
+            <article class="panel order-progress-panel">
+              <div class="panel-head"><div><p class="eyebrow">طلبية دورية</p><h3>الطلبية #MP-1048</h3></div><span class="status status-processing">قيد التجهيز</span></div>
+              <p class="panel-subtitle">4 أصناف طبية من 3 موردين معتمدين • القيمة 286,400 ر.س</p>
+              <div class="progress-track" aria-label="مرحلة الطلب الحالية: قيد التجهيز">
+                <div class="progress-step done"><span>1</span><b>تم الاعتماد</b></div><div class="track-line done"></div>
+                <div class="progress-step done"><span>2</span><b>تأكيد المورد</b></div><div class="track-line done"></div>
+                <div class="progress-step current"><span>3</span><b>قيد التجهيز</b></div><div class="track-line"></div>
+                <div class="progress-step"><span>4</span><b>قيد التوصيل</b></div><div class="track-line"></div>
+                <div class="progress-step"><span>5</span><b>تم الاستلام</b></div>
+              </div>
+              <div class="order-note"><span class="material-symbols-rounded">schedule</span><div><strong>الوصول المتوقع: الأربعاء 7 أكتوبر</strong><p>اكتملت مطابقة 3 من أصل 4 شهادات دفعات.</p></div><button class="text-btn" data-route="orders">عرض التفاصيل</button></div>
+            </article>
+
+            <article class="panel spend-panel">
+              <div class="panel-head"><div><p class="eyebrow">تحليل الإنفاق</p><h3>آخر 6 أشهر</h3></div><button class="more-btn" aria-label="خيارات الرسم"><span class="material-symbols-rounded">more_horiz</span></button></div>
+              <div class="bar-chart" aria-label="رسم يوضح نمو الإنفاق خلال ستة أشهر">
+                <div style="--h:48%"><span>620</span><i></i><b>مايو</b></div><div style="--h:61%"><span>790</span><i></i><b>يونيو</b></div><div style="--h:55%"><span>710</span><i></i><b>يوليو</b></div><div style="--h:75%"><span>970</span><i></i><b>أغسطس</b></div><div style="--h:68%"><span>875</span><i></i><b>سبتمبر</b></div><div class="active" style="--h:94%"><span>1,284</span><i></i><b>أكتوبر</b></div>
+              </div>
+            </article>
+          </div>
+
+          <div class="dashboard-grid lower-grid">
+            <article class="panel">
+              <div class="panel-head"><div><p class="eyebrow">بحاجة إلى إجراء</p><h3>تنبيهات المشتريات</h3></div><span class="count-badge">3</span></div>
+              <div class="alert-list">
+                <button><span class="alert-icon warning-soft"><span class="material-symbols-rounded">hourglass_top</span></span><span><strong>عرض سعر ينتهي خلال ساعتين</strong><small>قفازات Nitrile — مستودع النور</small></span><span class="material-symbols-rounded">chevron_left</span></button>
+                <button><span class="alert-icon error-soft"><span class="material-symbols-rounded">inventory_2</span></span><span><strong>مخزون الشاش الجراحي منخفض</strong><small>تبقّى 8 علب حسب معدل الاستهلاك</small></span><span class="material-symbols-rounded">chevron_left</span></button>
+                <button><span class="alert-icon info-soft"><span class="material-symbols-rounded">fact_check</span></span><span><strong>فاتورة بانتظار المطابقة</strong><small>الفاتورة INV-88012 • 126,000 ر.س</small></span><span class="material-symbols-rounded">chevron_left</span></button>
+              </div>
+            </article>
+            <article class="panel">
+              <div class="panel-head"><div><p class="eyebrow">أداء الموردين</p><h3>الأعلى تقييماً</h3></div><button class="text-btn" data-route="suppliers">عرض الكل</button></div>
+              <div class="supplier-mini-list" id="dashboardSuppliers"></div>
+            </article>
+          </div>
+        </section>
+
+        <section class="view" id="catalogView" data-view="catalog">
+          <div class="catalog-toolbar">
+            <div><p class="eyebrow">2,480 صنفاً من 36 مورداً</p><h2>كتالوج المستلزمات الطبية</h2></div>
+            <button class="secondary-btn" id="filterToggle"><span class="material-symbols-rounded">tune</span> تصفية النتائج</button>
+          </div>
+          <div class="catalog-layout">
+            <aside class="filters-panel" id="filtersPanel">
+              <div class="filter-title"><h3>تصفية النتائج</h3><button id="clearFilters" class="text-btn">مسح الكل</button></div>
+              <fieldset><legend>التصنيف</legend><label><input type="radio" name="category" value="all" checked> جميع الأصناف <span>2480</span></label><label><input type="radio" name="category" value="consumables"> مستهلكات طبية <span>862</span></label><label><input type="radio" name="category" value="lab"> مخبريات وكواشف <span>410</span></label><label><input type="radio" name="category" value="equipment"> أجهزة ومعدات <span>324</span></label><label><input type="radio" name="category" value="pharma"> أدوية وعقاقير <span>884</span></label></fieldset>
+              <fieldset><legend>التوفر</legend><label><input type="checkbox" id="stockOnly"> متوفر حالياً</label><label><input type="checkbox" id="verifiedOnly"> موردون معتمدون فقط</label></fieldset>
+              <fieldset><legend>نطاق السعر</legend><div class="price-range"><input id="minPrice" inputmode="numeric" placeholder="من"><span>—</span><input id="maxPrice" inputmode="numeric" placeholder="إلى"></div></fieldset>
+            </aside>
+            <div class="catalog-results">
+              <div class="results-head"><p>نعرض <strong id="resultsCount">0</strong> نتائج مطابقة</p><label>الترتيب <select id="sortSelect"><option value="recommended">الأكثر ملاءمة</option><option value="low">السعر: الأقل</option><option value="high">السعر: الأعلى</option><option value="rating">التقييم</option></select></label></div>
+              <div class="product-grid" id="productGrid"></div>
+              <div class="empty-state" id="emptyState" hidden><span class="material-symbols-rounded">search_off</span><h3>لا توجد نتائج مطابقة</h3><p>جرّب تعديل عبارة البحث أو إزالة بعض عوامل التصفية.</p><button class="secondary-btn" id="emptyReset">إعادة ضبط البحث</button></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="view" id="ordersView" data-view="orders">
+          <div class="section-heading"><div><p class="eyebrow">إدارة دورة التوريد</p><h2>الطلبات والشحنات</h2></div><button class="primary-btn" data-route="catalog"><span class="material-symbols-rounded">add</span> طلب جديد</button></div>
+          <div class="status-tabs" role="tablist"><button class="active" data-order-filter="all">الكل <span>8</span></button><button data-order-filter="pending">بانتظار التأكيد <span>2</span></button><button data-order-filter="processing">قيد التجهيز <span>3</span></button><button data-order-filter="shipping">قيد التوصيل <span>2</span></button><button data-order-filter="delivered">تم التوصيل <span>1</span></button></div>
+          <div class="orders-list" id="ordersList"></div>
+        </section>
+
+        <section class="view" id="suppliersView" data-view="suppliers">
+          <div class="section-heading"><div><p class="eyebrow">شبكة توريد موثوقة</p><h2>الموردون المعتمدون</h2></div><button class="secondary-btn"><span class="material-symbols-rounded">add_business</span> دعوة مورد</button></div>
+          <div class="supplier-grid" id="supplierGrid"></div>
+        </section>
+
+        <section class="view" id="rfqView" data-view="rfq">
+          <div class="rfq-wrap panel">
+            <div class="rfq-copy"><span class="large-icon"><span class="material-symbols-rounded">request_quote</span></span><p class="eyebrow">طلب عروض أسعار</p><h2>أنشئ مناقصة قصيرة للموردين المعتمدين</h2><p>أضف احتياجك الطبي وحدد تاريخ التسليم، وسنرتّب العروض حسب السعر والامتثال وسرعة التوريد.</p><ul><li><span class="material-symbols-rounded">check_circle</span> مقارنة موحّدة بين الموردين</li><li><span class="material-symbols-rounded">check_circle</span> توثيق كامل للموافقات</li><li><span class="material-symbols-rounded">check_circle</span> مناسب للكميات والعقود الكبيرة</li></ul></div>
+            <form class="rfq-form" id="rfqForm"><h3>بيانات الطلب</h3><label>عنوان الطلب<input required name="title" placeholder="مثال: مستلزمات غرفة العمليات للربع الرابع"></label><label>الفئة<select required name="category"><option value="">اختر الفئة</option><option>مستهلكات طبية</option><option>مخبريات وكواشف</option><option>أجهزة ومعدات</option><option>أدوية وعقاقير</option></select></label><label>تفاصيل الاحتياج<textarea required name="details" rows="5" placeholder="اكتب الأصناف والكميات والمواصفات المطلوبة..."></textarea></label><div class="form-row"><label>آخر موعد للعروض<input required type="date" name="due" value="2026-10-12"></label><label>موقع التسليم<select name="location"><option>الرياض — المستودع المركزي</option><option>جدة — فرع العيادات</option><option>الدمام — مركز الرعاية</option></select></label></div><button class="primary-btn full" type="submit"><span class="material-symbols-rounded">send</span> إرسال طلب التسعير</button></form>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <nav class="mobile-nav" aria-label="التنقل على الجوال"><button class="active" data-route="dashboard"><span class="material-symbols-rounded">space_dashboard</span><span>الرئيسية</span></button><button data-route="catalog"><span class="material-symbols-rounded">inventory_2</span><span>المنتجات</span></button><button data-route="orders"><span class="material-symbols-rounded">local_shipping</span><span>طلباتي</span></button><button id="mobileCart"><span class="material-symbols-rounded">shopping_cart</span><span>السلة</span><b id="mobileCartCount">0</b></button><button data-route="suppliers"><span class="material-symbols-rounded">warehouse</span><span>الموردون</span></button></nav>
+
+  <div class="drawer-backdrop" id="backdrop" hidden></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-labelledby="cartTitle" aria-hidden="true">
+    <div class="drawer-head"><div><p class="eyebrow">قائمة الشراء</p><h2 id="cartTitle">السلة الموحّدة</h2></div><button class="icon-btn" id="closeCart" aria-label="إغلاق السلة"><span class="material-symbols-rounded">close</span></button></div>
+    <div class="cart-body" id="cartItems"></div>
+    <div class="cart-footer"><div class="summary-line"><span>الإجمالي قبل الضريبة</span><strong id="cartSubtotal">0 ر.س</strong></div><div class="summary-line"><span>ضريبة القيمة المضافة (15%)</span><strong id="cartVat">0 ر.س</strong></div><div class="summary-line total"><span>الإجمالي</span><strong id="cartTotal">0 ر.س</strong></div><button class="primary-btn full" id="checkoutBtn">مراجعة الطلب وإرساله</button></div>
+  </aside>
+
+  <dialog class="checkout-dialog" id="checkoutDialog"><form method="dialog"><button class="icon-btn dialog-close" value="cancel" aria-label="إغلاق"><span class="material-symbols-rounded">close</span></button><div id="checkoutContent"></div></form></dialog>
+  <div class="toast-region" id="toastRegion" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
